@@ -1,0 +1,101 @@
+@import "../../styles/abstract";
+
+
+.Search {
+   background-color: $white;
+   border-radius: $radius;
+   h1 {
+      padding: 2rem 0 1rem;
+      text-align: center;
+      font-size: $font-xl;
+   }
+}
+
+.Header {
+   padding: 2rem 2rem 3rem;
+   font-size: $font-s;
+}
+
+.Form {
+   @include grad($red);
+   border-radius: $radius;
+   @media only screen and (max-width: 28.125em) {
+      border-radius: 0;
+   }
+   .FormGroup {
+      position: relative;
+      width: 80%;
+      margin: 0 auto;
+      margin-top: 2rem;
+   }
+   input {
+      background: none;
+      display: block;
+      font-size: inherit;
+      font-family: inherit;
+      padding: 1.5rem;
+      outline: none;
+      &::placeholder {
+         color: $white;
+      }
+      &[type="number"] {
+         margin-bottom: 6rem;
+      }
+      &:not([type="submit"]) {
+         width: 100%;
+         border: none;
+         border-bottom: 2px solid $white;
+         color: inherit;
+         &:focus {
+            background: rgba($red, .35);
+         }
+      }
+      &[type="submit"] {
+         background-image: linear-gradient(45deg, $white 50%, $red 50%);
+         background-size: 270%;
+         border: 3px solid $red;
+         color: $red;
+         padding: 1.5rem 2rem;
+         margin: 0 auto;
+         font-weight: bold;
+         transition: .3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+         &:hover,
+         &:focus {
+            background-position: 98%;
+            box-shadow: 0 1rem 2rem $shadow-black;
+            background-image: linear-gradient(45deg, $white 50%, darken($red, 5%) 50%);
+            border: 3px solid darken($red, 5%);
+            color: $white;
+            transform: translateY(-3px);
+         }
+         &:active {
+            box-shadow: 0 .5rem 1rem $shadow-black;
+            transform: translateY(1px);
+         }
+      }
+   }
+   .FormLabel {
+      position: absolute;
+      top: -12%;
+      left: 1rem;
+      font-size: $font-s;
+      font-weight: 700;
+      transition: .2s ease-in-out;
+   }
+   input:placeholder-shown+.FormLabel {
+      opacity: 0;
+      top: 30%;
+      visibility: hidden;
+   }
+   .FormFooter {
+      border-bottom-left-radius: $radius;
+      border-bottom-right-radius: $radius;
+      padding: 6rem 0;
+      background-color: $white;
+      color: $red;
+      @media only screen and (max-width: 28.125em) {
+         border-bottom-left-radius: 0;
+         border-bottom-right-radius: 0;
+      }
+   }
+}

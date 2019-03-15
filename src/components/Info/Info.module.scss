@@ -1,0 +1,45 @@
+@import "../../styles/abstract";
+
+
+.Info {
+   margin-top: 3rem;
+   background-color: #fcf9dd;
+   border-radius: $radius;
+   overflow: hidden;
+   text-align: center;
+   @media only screen and (max-width: 28.125em) {
+      border-radius: 0;
+   }
+}
+
+.Result {
+   @include grad($blue);
+   padding: 4rem;
+   font-size: $font-xl;
+   font-weight: 700;
+}
+
+.Countries {
+   padding: 2rem;
+   color: $blue;
+   font-size: $font-lg;
+   @media only screen and (max-width: 28.125em) {
+      font-size: 1.8rem;
+   }
+   ul {
+      margin-top: 2rem;
+      list-style: none;
+      font-size: 1.6rem;
+      li {
+         align-items: center;
+         display: flex;
+         justify-content: space-between;
+         padding: .5rem 0;
+         img {
+            width: 6.5rem;
+            height: 4.5rem;
+            margin-right: 1rem;
+         }
+      }
+   }
+}

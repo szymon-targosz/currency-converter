@@ -1,0 +1,14 @@
+$red: #ff4c4a;
+$blue: #1895fe;
+$white: #fcf9dd;
+$shadow-black: rgba(0, 0, 0, .2);
+
+$radius: 4px;
+
+$font-s: 1.4rem;
+$font-lg: 2rem;
+$font-xl: 3rem;
+
+@mixin grad($color) {
+   background-image: linear-gradient(45deg, lighten($color, 20%), $color);
+}

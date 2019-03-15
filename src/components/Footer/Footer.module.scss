@@ -1,0 +1,12 @@
+@import "../../styles/abstract";
+
+.Footer {
+   bottom: 0;
+   font-size: $font-s;
+   left: 0;
+   background-color: $red;
+   padding: 2rem;
+   position: absolute;
+   text-align: center;
+   width: 100%;
+}

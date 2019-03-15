@@ -102,6 +102,10 @@ module.exports = (env) => {
                   localIdentName: '[name]__[local]__[hash:base64:5]',
                   sourceMap: true
                }, true)
+            },
+            {
+               test: /\.(jpe?g|png|gif)$/,
+               loader: 'url-loader?limit=8192&name=images/[name].[ext]'
             }
          ]
       },
@@ -109,7 +113,8 @@ module.exports = (env) => {
          new HtmlWebpackPlugin({
             template: `${__dirname}/src/index.html`,
             inject: 'body',
-            filename: 'index.html'
+            filename: 'index.html',
+            favicon: './src/assets/favicon.ico'
          }),
          new MiniCssExtractPlugin({ filename: 'css/style.css' }),
          new webpack.DefinePlugin({
